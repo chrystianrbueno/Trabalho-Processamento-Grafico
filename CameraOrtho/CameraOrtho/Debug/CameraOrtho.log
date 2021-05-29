@@ -1,16 +1,13 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (CameraOrtho.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  glad.c
   SceneManager.cpp
-D:\Visual Stdio\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(125,20): warning C4018: '<': signed/unsigned mismatch
-D:\Visual Stdio\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(140,20): warning C4018: '<': signed/unsigned mismatch
-D:\Visual Stdio\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(152,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Visual Stdio\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(153,73): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Visual Stdio\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(210,90): warning C4244: '=': conversion from '_Rep' to 'float', possible loss of data
+D:\temp\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(154,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\temp\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(155,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\temp\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(212,90): warning C4244: '=': conversion from '_Rep' to 'float', possible loss of data
           with
           [
               _Rep=__int64
           ]
-D:\Visual Stdio\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(350,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Source.cpp
-  Sprite.cpp
-  Generating Code...
-  CameraOrtho.vcxproj -> D:\Visual Stdio\Trabalho\CameraOrtho\Debug\Trabalho.exe
+D:\temp\Trabalho\CameraOrtho\CameraOrtho\SceneManager.cpp(352,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  CameraOrtho.vcxproj -> D:\temp\Trabalho\CameraOrtho\Debug\Trabalho.exe

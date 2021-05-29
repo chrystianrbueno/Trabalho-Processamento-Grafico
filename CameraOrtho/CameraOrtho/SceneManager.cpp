@@ -3,6 +3,7 @@
 #include <chrono>
 
 //static controllers for mouse and keyboard
+#define CONSTPRESENT 10
 static bool keys[1024];
 static bool keyDir = false;
 static bool keyEsq = false;
@@ -122,41 +123,42 @@ void SceneManager::render()
 	//atualiza e desenha os Sprites
 
 
-	for (int i = 0; i < objectCenario.size(); i++)
+	for (Sprite* imgCenario : objectCenario)
 	{
-		objectCenario[i]->update();
-		objectCenario[i]->draw();
-		if ((objectCenario[0]->getPosY() < 350.0f)) {
-			objectCenario[0]->setPosY(objectCenario[0]->getPosY() + 0.01f);
-		}
-		if ((objectCenario[1]->getPosX() < 350.0f)) {
-			objectCenario[1]->setPosX(objectCenario[1]->getPosX() + 0.001f);
-		}
-		if ((objectCenario[2]->getPosX() < 550.0f)) {
-			objectCenario[2]->setPosX(objectCenario[2]->getPosX() + 0.001f);
-		}
+		imgCenario->update();
+		imgCenario->draw();
+	}
+	
+	if ((objectCenario[0]->getPosY() < 350.0f)) {
+		objectCenario[0]->setPosY(objectCenario[0]->getPosY() + 0.01f);
+	}
+	if ((objectCenario[1]->getPosX() < 350.0f)) {
+		objectCenario[1]->setPosX(objectCenario[1]->getPosX() + 0.001f);
+	}
+	if ((objectCenario[2]->getPosX() < 550.0f)) {
+		objectCenario[2]->setPosX(objectCenario[2]->getPosX() + 0.001f);
 	}
 
-	for (int i = 0; i < objectPresents.size(); i++)
+	for (Sprite* imgPresents : objectPresents)
 	{
-		objectPresents[i]->setPosY(objectPresents[i]->getPosY() - objectPresents[i]->getTempoQueda());
-		objectPresents[i]->update();
-		objectPresents[i]->draw();
+		imgPresents->setPosY(imgPresents->getPosY() - imgPresents->getTempoQueda());
+		imgPresents->update();
+		imgPresents->draw();
 		
-		if (objectPresents[i]->getPosY() <= 100.0f && objectPresents[i]->getPosY() >= 90.0f)
+		if (imgPresents->getPosY() <= 100.0f && imgPresents->getPosY() >= 90.0f)
 		{
-			if (objectPresents[i]->getPosX() + 66.0f >= objectTreno[0]->getPosX() && objectTreno[0]->getPosX() + 200.0f >= objectPresents[i]->getPosX())
+			if (imgPresents->getPosX() + 66.0f >= objectTreno[0]->getPosX() && objectTreno[0]->getPosX() + 200.0f >= imgPresents->getPosX())
 			{
 				pontuacao++;
-				objectPresents[i]->setPosY(620);
-				objectPresents[i]->setPosX(rand() % (700 - 0 + 1));
-				objectPresents[i]->setTempoQueda(objectPresents[i]->getTempoQueda() + 0.02);
+				imgPresents->setPosY(620);
+				imgPresents->setPosX(rand() % (700 - 0 + 1));
+				imgPresents->setTempoQueda(imgPresents->getTempoQueda() + 0.02);
 
 			}
 		}
-		else if (objectPresents[i]->getPosY() <= 0.0f)
+		else if (imgPresents->getPosY() <= 0.0f)
 		{
-			objectPresents[i]->setPosY(620);
+			imgPresents->setPosY(620);
 			contador++;
 		}
 		
@@ -344,7 +346,7 @@ unsigned int SceneManager::loadTexture(string filename)
 void SceneManager::setPresent(Sprite* obj, unsigned int texID)
 {
 
-	for (int i = 0; i < 10; i++){
+	for (int i = 0; i < CONSTPRESENT; i++){
 
 		obj = new Sprite;
 		obj->setPosX(rand() % (700 - 0 + 1));
