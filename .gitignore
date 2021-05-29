@@ -32,4 +32,7 @@
 *.app
 
 # VisualStudio
-/CameraOrtho/.vs
+/CameraOrtho/
+	.vs
+	Debug
+	CameraOrtho/Debug
